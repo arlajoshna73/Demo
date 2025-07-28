@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 param location string = 'eastus'
-param resourcePrefix string = 'aksbiceprg'
+param resourcePrefix string = 'aksbicep'
 
 var resourceGroupName = '${resourcePrefix}-rg'
 
