@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 param location string = 'eastus'
-param resourcePrefix string = 'aksbicep'
+param resourcePrefix string = 'aksbicepdmo'
 
 var resourceGroupName = '${resourcePrefix}-rg'
 
@@ -17,8 +17,9 @@ module aks './aks-cluster.bicep' = {
   scope: rg
   params: {
     location: location
-    clusterName: resourcePrefix // Ensure this matches the parameter name in aks-cluster.bicep
-    nodeCount: 3 // Ensure this matches the parameter name in aks-cluster.bicep
-    vmSize: 'Standard_DS2_v2' // Ensure this matches the parameter name in aks-cluster.bicep
+    clusterName: resourcePrefix
+    nodeCount: 3
+    vmSize: 'Standard_DS2_v2'
+    agentPoolName: 'nodepool1' 
   }
 }
